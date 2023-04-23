@@ -1,4 +1,4 @@
-import ClickIcon from 'icons/envelopTick.png'
+import ClickIcon from 'public/assets/icons/envelopTick.png'
 import Image from 'next/image';
 
 interface componentProps {

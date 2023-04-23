@@ -9,15 +9,5 @@ module.exports = {
     })
 
     return config
-  },
-  // To redirect your page from home page to hatever page you want
-  // async redirects() {
-  //   return [
-  //     {
-  //       source: '/',
-  //       destination: '/example/login',
-  //       permanent: false,
-  //     },
-  //   ]
-  // }
+  }
 }

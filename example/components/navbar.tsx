@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Image from 'next/image';
-import LucyLogo from 'icons/LucyLogo.png';
+import LucyLogo from 'public/assets/icons/LucyLogo.png';
 import CallToActionButton from './callToActionButton';
 
 
@@ -12,10 +12,10 @@ function NavBar() {
 
     return (
         <nav className="w-full bg-purple-100 shadow">
-            <div className="justify-between flex items-center px-4 mx-auto border lg:max-w-7xl md:items-center md:flex md:px-8">
+            <div className="justify-between flex items-center px-4 mx-auto border md:items-center md:flex md:px-8 lg:max-w-7xl">
                 <div>
                     <div className="flex border items-center justify-between py-3 md:py-5 md:block">
-                        <a href="javascript:void(0)">
+                        <a href="">
                             <Image src={LucyLogo} />
                         </a>
                     </div>
@@ -59,22 +59,26 @@ function NavBar() {
                 </div>
                 {/* phone nav element */}
                 <div
-                    className={`flex-1 absolute  md:hidden top-[10%] w-[100%] justify-self-center pb-3 mt-8  md:pb-0 md:mt-0 ${navbar ? "block" : "hidden"
+                    className={`flex-1 absolute left-[-0.2rem] top-[10%] w-[100%] justify-self-center pb-3 mt-8 md:hidden md:pb-0 md:mt-0 ${navbar ? "block" : "hidden"
                         }`}
                 >
-                    <div className="md:flex md:flex-row md:items-center flex flex-col justify-center items-center">
+                    <div className="flex flex-col justify-center items-center md:flex md:flex-row md:items-center">
                         <div className="flex items-center justify-center w-16 h-4 not-italic font-semibold text-xl leading-8" >Login</div>
-                        <CallToActionButton width={buttonWidth} />
+                        <a href="https://t.me/lucy_one_bot">
+                            <CallToActionButton width={buttonWidth} />
+                        </a>
                     </div>
                 </div>
                 {/* tab nav element */}
                 <div
-                    className={`  hidden  w-max   pb-3 mt-8 md:block md:pb-0 md:mt-0 ${navbar ? "block" : "hidden"
+                    className={`  hidden w-max pb-3 mt-8 md:block md:pb-0 md:mt-0 ${navbar ? "block" : "hidden"
                         }`}
                 >
-                    <div className="md:flex md:flex-row md:items-center flex flex-col items-center">
+                    <div className="flex flex-col w-[100%] items-center md:flex md:flex-row md:items-center">
                         <div className="flex items-center justify-center w-16 h-4 not-italic font-semibold text-xl leading-8" >Login</div>
-                        <CallToActionButton width={buttonWidth} />
+                        <a href="https://t.me/lucy_one_bot">
+                            <CallToActionButton width={buttonWidth} />
+                        </a>
                     </div>
                 </div>
             </div>
