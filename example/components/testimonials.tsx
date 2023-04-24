@@ -5,7 +5,15 @@ function Testimonials() {
 
     const buttonWidth: string = `w-[300px]`;
 
-    const data = [
+    interface testimonial {
+        id: number,
+        name: string,
+        occupation: string,
+        opinion: string,
+        imgPath: string
+    }
+
+    const data: testimonial[] = [
         {
            id: 0,
            name: "Erica Adebowale",
@@ -36,7 +44,6 @@ function Testimonials() {
         }
     ];
     
-
     return (
         
         <div className="flex flex-col items-center justify-center">
