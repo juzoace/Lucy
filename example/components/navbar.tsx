@@ -97,7 +97,7 @@ function NavBar() {
                 </div>
                 {/* phone nav element */}
                 <div
-                    className={`flex-1 absolute left-[-0.2rem] top-[2%] w-[100%] justify-self-center pb-3 ${colorChange ? "bg-white": ""} mt-8 md:hidden md:pb-0 md:mt-0 ${navbar ? "block" : "hidden"
+                    className={`flex-1 absolute left-[-0.2rem] top-[38%] pb-[3rem] w-[100%] justify-self-center pb-3 ${colorChange ? "bg-white": ""} mt-8 md:hidden md:pb-0 md:mt-0 ${navbar ? "block" : "hidden"
                         }`}
                 >
                     <div className="flex flex-col justify-center items-center md:flex md:flex-row md:items-center">
