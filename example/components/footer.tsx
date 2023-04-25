@@ -3,8 +3,23 @@ import useWindowSize from '../../utils/useWindowSize';
 
 function Footer() {
     const { width }  = useWindowSize();
-    const data = {
+
+    interface footerIconData {
+        name: string,
+        imgPath: string,
+        href: string
+    }
+
+    interface footerData {
+        footerLogo: footerIconData,
+        footerText: string,
+        footerIcons: footerIconData[],
+        copyrightText: string
+    }
+
+    const data: footerData = {
         footerLogo: {
+            name: 'LucyLogo',
             imgPath: '/assets/icons/LucyLogo.png',
             href: 'https://asklucy.co'
         },
@@ -13,22 +28,22 @@ function Footer() {
             {
                 name: 'Telegram',
                 href: 'https://t.me/lucy_one_bot',
-                src: '/assets/icons/telegramLogo.png'
+                imgPath: '/assets/icons/telegramLogo.png'
             },
             {
                 name: 'Instagram',
                 href: 'https://www.instagram.com/asklucyhq/',
-                src: '/assets/icons/instagramLogo.png' 
+                imgPath: '/assets/icons/instagramLogo.png' 
             },
             {
                 name: 'Facebook',
                 href: 'https://www.facebook.com/asklucyhq',
-                src: '/assets/icons/facebookLogo.png'
+                imgPath: '/assets/icons/facebookLogo.png'
             },
             {
                 name: 'Twitter',
                 href: 'https://twitter.com/asklucyhq',
-                src: '/assets/icons/twitterLogo.png'
+                imgPath: '/assets/icons/twitterLogo.png'
             }
         ],
         copyrightText: 'All rights reserved'
@@ -51,7 +66,7 @@ function Footer() {
 
                     {/* Lucy Text */}
                     <div className='mt-4 text-center md:text-left'>
-                        <p className='h-24 not-italic font-light text-xs leading-6 md:md:ml-2.5 md:w-[18rem] lg:w-[22rem]'>{data.footerText}</p>
+                        <p className='h-24 not-italic font-light text-xs leading-6 md:md:ml-2.5 md:w-[18rem] lg:w-[23rem]'>{data.footerText}</p>
                     </div>
 
                 </div>
@@ -62,7 +77,7 @@ function Footer() {
 
                     {data.footerIcons.map((icon) => (
                         <a href={icon.href} className='mr-5'>
-                            <Image width={ width! >= 769 ? 50: 40} height={width! >= 769 ? 50: 40} src={icon.src} />
+                            <Image width={ width! >= 769 ? 35: 25} height={width! >= 769 ? 35: 25} src={icon.imgPath} />
                         </a>
                     ))}
                 </div>

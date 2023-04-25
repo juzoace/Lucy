@@ -16,31 +16,31 @@ function Testimonials() {
     const data: testimonial[] = [
         {
            id: 0,
-           name: "Erica Adebowale",
+           name: "Keane Paul",
            occupation: "Technology consultant",
            opinion: "I love how my AI assistant remembers my schedule preferences and can even make recommendations based on my habits. It's like having a personal concierge." ,
-           imgPath: "/assets/images/testimonialOne.png"
+           imgPath: "/assets/images/keanePaul.png"
         },
         {
            id: 1,
-           name: "Ziu chang",
+           name: "Ziu Chang",
            occupation: "Digital strategist",
            opinion: "This AI assistant has been a game changer for my productivity. With it's ability to handle repetitive tasks, i can focus on the more important aspects of my job." ,
-           imgPath: "/assets/images/testimonialOne.png"
+           imgPath: "/assets/images/ziu.png"
         },
         {
            id: 2,
-           name: "Kevin hardman",
+           name: "Kevin Hardman",
            occupation: "College student",
            opinion: "I love how this AI integrates with all my devices seamlessly. It has become an essential part of my daily routine." ,
-           imgPath: "/assets/images/testimonialOne.png"
+           imgPath: "/assets/images/kevinHardman.png"
         },
         {
            id: 3,
-           name: "Keane paul",
+           name: "Sharon Kehler",
            occupation: "Accountant",
            opinion: "I love how my AI assistant remembers my schedule, preferences and can even make recommendations based on my habits. It's like having a personal concierge. This AI assistant has been a game changer for my productivity. I can focus on the more important aspects of my job.",
-           imgPath: "/assets/images/testimonialOne.png"
+           imgPath: "/assets/images/sharon.png"
         }
     ];
     
@@ -57,7 +57,7 @@ function Testimonials() {
             </div>
 
             <div className="flex flex-col justify-center items-center bg-gray-900 rounded-[12px] m-4 w-[90%] h-[25rem] md:w-[95%]">
-                <h1 className="not-italic font-bold text-2xl text-center text-white leading-8 mt-[1rem] mb-[2rem]">Experience the power of <br></br> AI with our personal <br></br>assistant</h1>
+                <h1 className="h-[3rem] not-italic font-bold text-2xl text-center text-white leading-8 mt-[1rem] mb-[2rem] lg:w-[30rem] xl:w-[25rem]">Experience the power of AI with our personal assistant</h1>
                 <p className="h-20 not-italic font-light text-sm text-center text-white pl-5 pr-5">Our AI technology is designed to make your life easier by handling tasks, managing schedules and providing intelligent insights</p>
                 <a href="https://t.me/lucy_one_bot">
                     <CallToActionButton width={buttonWidth}/>

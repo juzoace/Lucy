@@ -1,22 +1,43 @@
 import { useState } from "react";
 import Image from 'next/image';
-import LucyLogo from 'public/assets/icons/LucyLogo.png';
 import CallToActionButton from './callToActionButton';
+import useWindowSize from '../../utils/useWindowSize';
 
 
 function NavBar() {
+    const { width }  = useWindowSize();
 
     const [navbar, setNavbar] = useState(false);
 
     const buttonWidth: string = `w-[240px]`;
 
+    interface navBarIconData {
+        name: string,
+        imgPath: string,
+        href: string
+    }
+
+    interface navBarData {
+        navBarLogo: navBarIconData,
+        navBarItems: string[]
+    }
+
+    const data: navBarData = {
+        navBarLogo: {
+            name: 'LucyLogo',
+            imgPath: '/assets/icons/LucyLogo.png',
+            href: "https://asklucy.co"
+        },
+        navBarItems: ['Login']
+    }
+
     return (
-        <nav className="w-full bg-purple-100 shadow">
+        <nav className="fixed z-10 w-full bg-purple-100 shadow-none">
             <div className="justify-between flex items-center px-4 mx-auto border md:items-center md:flex md:px-8 lg:max-w-7xl">
                 <div>
                     <div className="flex border items-center justify-between py-3 md:py-5 md:block">
-                        <a href="">
-                            <Image src={LucyLogo} />
+                        <a href={data.navBarLogo.href}>
+                            <Image width={ width! >= 769 ? 90: 80} height={width! >= 769 ? 43: 43} src={data.navBarLogo.imgPath}/>
                         </a>
                     </div>
                 </div>
@@ -63,7 +84,7 @@ function NavBar() {
                         }`}
                 >
                     <div className="flex flex-col justify-center items-center md:flex md:flex-row md:items-center">
-                        <div className="flex items-center justify-center w-16 h-4 not-italic font-semibold text-xl leading-8" >Login</div>
+                        <div className="flex items-center justify-center w-16 h-4 not-italic font-semibold text-xl leading-8" >{data.navBarItems[0]}</div>
                         <a href="https://t.me/lucy_one_bot">
                             <CallToActionButton width={buttonWidth} />
                         </a>
@@ -75,7 +96,7 @@ function NavBar() {
                         }`}
                 >
                     <div className="flex flex-col w-[100%] items-center md:flex md:flex-row md:items-center">
-                        <div className="flex items-center justify-center w-16 h-4 not-italic font-semibold text-xl leading-8" >Login</div>
+                        <div className="flex items-center justify-center w-16 h-4 not-italic font-semibold text-xl leading-8">{data.navBarItems[0]}</div>
                         <a href="https://t.me/lucy_one_bot">
                             <CallToActionButton width={buttonWidth} />
                         </a>

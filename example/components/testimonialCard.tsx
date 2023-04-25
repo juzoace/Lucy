@@ -28,8 +28,8 @@ const TestimonialCard = ({testimonials}: componentProps) => {
                                 <Image src={testimonial.imgPath} width={50} height={50}/>
                             </div>
                             <div className="text-center lg:text-left grow-8">
-                                <h1>{testimonial.name}</h1>
-                                <p>{testimonial.occupation}</p>
+                                <h1 className="text-base leading-6 text-black">{testimonial.name}</h1>
+                                <p className="text-gray-500 font-normal text-base leading-6">{testimonial.occupation}</p>
                             </div>
                         </div>
  
@@ -52,7 +52,7 @@ const TestimonialCard = ({testimonials}: componentProps) => {
                             </div>
                         </div>
 
-                        <p className="block m-auto mb-4 text-center md:p-2 md:text-center lg:text-left" >
+                        <p className="not-italic font-light text-sm text-gray-900 block m-auto mb-4 text-center md:p-2 md:text-center lg:text-left" >
                             {testimonial.opinion}
                         </p>
 
