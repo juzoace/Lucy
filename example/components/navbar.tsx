@@ -1,16 +1,33 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from 'next/image';
 import CallToActionButton from './callToActionButton';
 import useWindowSize from '../../utils/useWindowSize';
 
 
 function NavBar() {
+
+    const [colorChange, setColorchange] = useState(false);
+
+    useEffect(() => {
+        const changeNavbarColor = () =>{
+            if(window.scrollY >= 90){
+              setColorchange(true);
+            }
+            else{
+              setColorchange(false);
+            }
+         };
+         window.addEventListener('scroll', changeNavbarColor);
+    })
+
+
     const { width }  = useWindowSize();
 
     const [navbar, setNavbar] = useState(false);
 
     const buttonWidth: string = `w-[240px]`;
-
+    const navBarStyleWithOutScroll = `fixed z-10 w-full bg-purple-100 shadow-none`
+    const navBarStyleOnScroll = `fixed z-10 w-full bg-white shadow`
     interface navBarIconData {
         name: string,
         imgPath: string,
@@ -32,7 +49,7 @@ function NavBar() {
     }
 
     return (
-        <nav className="fixed z-10 w-full bg-purple-100 shadow-none">
+        <nav className={colorChange ? navBarStyleOnScroll : navBarStyleWithOutScroll}>
             <div className="justify-between flex items-center px-4 mx-auto border md:items-center md:flex md:px-8 lg:max-w-7xl">
                 <div>
                     <div className="flex border items-center justify-between py-3 md:py-5 md:block">
@@ -80,7 +97,7 @@ function NavBar() {
                 </div>
                 {/* phone nav element */}
                 <div
-                    className={`flex-1 absolute left-[-0.2rem] top-[10%] w-[100%] justify-self-center pb-3 mt-8 md:hidden md:pb-0 md:mt-0 ${navbar ? "block" : "hidden"
+                    className={`flex-1 absolute left-[-0.2rem] top-[2%] w-[100%] justify-self-center pb-3 ${colorChange ? "bg-white": ""} mt-8 md:hidden md:pb-0 md:mt-0 ${navbar ? "block" : "hidden"
                         }`}
                 >
                     <div className="flex flex-col justify-center items-center md:flex md:flex-row md:items-center">
