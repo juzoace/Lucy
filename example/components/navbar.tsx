@@ -102,7 +102,7 @@ function NavBar() {
                         }`}
                 >
                     <div className="flex flex-col justify-center items-center md:flex md:flex-row md:items-center">
-                        <div className="flex items-center justify-center w-16 h-4 not-italic font-semibold text-xl leading-8" >{data.navBarItems[0]}</div>
+                        {/* <div className="flex items-center justify-center w-16 h-4 not-italic font-semibold text-xl leading-8" >{data.navBarItems[0]}</div> */}
                         <a target="_blank" href="https://t.me/lucy_one_bot">
                             <CallToActionButton text={navButtonText} width={buttonWidth} />
                         </a>
@@ -114,7 +114,7 @@ function NavBar() {
                         }`}
                 >
                     <div className="flex flex-col w-[100%] items-center md:flex md:flex-row md:items-center">
-                        <div className="flex items-center justify-center w-26 h-4 not-italic font-semibold text-xl leading-8">{data.navBarItems[0]}</div>
+                        {/* <div className="flex items-center justify-center w-26 h-4 not-italic font-semibold text-xl leading-8">{data.navBarItems[0]}</div> */}
                         <a target="_blank" href="https://t.me/lucy_one_bot">
                             <CallToActionButton text={navButtonText} width={buttonWidth} />
                         </a>
