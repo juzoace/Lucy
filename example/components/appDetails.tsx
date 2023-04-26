@@ -13,8 +13,8 @@ import useWindowSize from '../../utils/useWindowSize';
 
 function AppDetails() {
     const { width }  = useWindowSize();
-    const buttonWidth: string = `w-[380px]`;
-
+    const buttonWidthDesktop: string = `w-[380px]`;
+    const buttonWidthMobile: string = `w-[260px]`
     const data = {
         headingText: 'Empower your life with AI technology',
         testimonialButtonText: 'Get started for free',
@@ -115,7 +115,7 @@ function AppDetails() {
 
             <div className="md:mt-[2rem] cursor-pointer md:mb-[5rem]">
                 <a target="_blank" href="https://t.me/lucy_one_bot">
-                    <CallToActionButton text={data.testimonialButtonText} width={buttonWidth}/>
+                    <CallToActionButton text={data.testimonialButtonText} width={ width! >= 769 ?  buttonWidthDesktop: buttonWidthMobile }/>
                 </a>  
             </div>
             
