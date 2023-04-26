@@ -14,7 +14,7 @@ import useWindowSize from '../../utils/useWindowSize';
 function AppDetails() {
     const { width }  = useWindowSize();
     const buttonWidthDesktop: string = `w-[380px]`;
-    const buttonWidthMobile: string = `w-[260px]`
+    const buttonWidthMobile: string = `w-[260px]`;
     const data = {
         headingText: 'Empower your life with AI technology',
         testimonialButtonText: 'Get started for free',
