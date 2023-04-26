@@ -17,6 +17,7 @@ function AppDetails() {
 
     const data = {
         headingText: 'Empower your life with AI technology',
+        testimonialButtonText: 'Get started for free',
         lucyFunctions: [
             {
                 heading: 'Ask Lucy anything',
@@ -112,9 +113,9 @@ function AppDetails() {
                 </div>
             </div>
 
-            <div className="md:mt-[2rem] md:mb-[5rem]">
-                <a href="https://t.me/lucy_one_bot">
-                    <CallToActionButton width={buttonWidth}/>
+            <div className="md:mt-[2rem] cursor-pointer md:mb-[5rem]">
+                <a target="_blank" href="https://t.me/lucy_one_bot">
+                    <CallToActionButton text={data.testimonialButtonText} width={buttonWidth}/>
                 </a>  
             </div>
             

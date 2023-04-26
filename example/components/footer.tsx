@@ -50,36 +50,36 @@ function Footer() {
     }
 
     return (
-        <div className='flex flex-col w-[100%] p-4 mt-6'>
+        <div className='flex flex-col w-[100%] p-7 mt-6'>
 
             {/* Footer description and social icon */}
             <div className='justify-between md:flex'>
-                <div >
+                <div>
 
                     {/* Lucy Logo */}
-                    <div className='text-center md:ml-1 md:text-left'>
+                    <div className='flex align-center justify-center md:flex md:justify-start text-center md:text-left'>
                         <a href={data.footerLogo.href}>
-                            <Image width={ width! >= 769 ? 90: 80} height={width! >= 769 ? 43: 43} src={data.footerLogo.imgPath} />
+                            <Image alt="" width={ width! >= 769 ? 90: 80} height={width! >= 769 ? 43: 43} src={data.footerLogo.imgPath} />
                         </a>
-                        
                     </div>
 
                     {/* Lucy Text */}
-                    <div className='mt-4 text-center md:text-left'>
-                        <p className='h-24 not-italic font-light text-xs leading-6 md:md:ml-2.5 md:w-[18rem] lg:w-[23rem]'>{data.footerText}</p>
+                    <div className='mt-4 mb-3 text-center md:text-left'>
+                        <p className='not-italic leading-7 font-normal text-base text-gray-500 md:ml-2.5 md:w-[25rem] lg:w-[28rem]'>{data.footerText}</p>
                     </div>
 
                 </div>
 
 
                 {/* Social Icons */}
-                <div className='flex mt-4 justify-center mb-4 md:relative md:top-[4rem]'>
+                <div className='flex mt-4 justify-center mb-4 md:relative md:top-[7rem]'>
 
-                    {data.footerIcons.map((icon) => (
-                        <a href={icon.href} className='mr-5'>
-                            <Image width={ width! >= 769 ? 35: 25} height={width! >= 769 ? 35: 25} src={icon.imgPath} />
+                    {data.footerIcons.map((icon, i) => (
+                        <a href={icon.href} key={i} className='mr-5'>
+                            <Image alt="" width={ width! >= 769 ? 35: 25} height={width! >= 769 ? 35: 25} src={icon.imgPath} />
                         </a>
                     ))}
+
                 </div>
 
             </div>

@@ -1,6 +1,5 @@
-const defaultTheme = require('tailwindcss/defaultTheme')
-const windmill = require('@roketid/windmill-react-ui/config')
-module.exports = windmill({
+// const defaultTheme = require('tailwindcss/defaultTheme')
+module.exports = {
   content: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}', './containers/**/*.{js,ts,jsx,tsx}', './example/**/*.{js,ts,jsx,tsx}'],
   theme: {
     screens: {
@@ -27,11 +26,14 @@ module.exports = windmill({
         orangeBackground: '#FFF8EE',
         whiteText: 'white'
         
+      },
+      fontFamily: {
+        sans: ['var(--font-poppins)']
       }
     }
   },
   plugins: [],
-})
+}
 
 // /** @type {import('tailwindcss').Config} */
 // module.exports = {

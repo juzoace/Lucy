@@ -18,16 +18,17 @@ function NavBar() {
             }
          };
          window.addEventListener('scroll', changeNavbarColor);
-    })
+    }, [])
 
 
     const { width }  = useWindowSize();
 
     const [navbar, setNavbar] = useState(false);
 
-    const buttonWidth: string = `w-[240px]`;
-    const navBarStyleWithOutScroll = `fixed z-10 w-full bg-purple-100 shadow-none`
-    const navBarStyleOnScroll = `fixed z-10 w-full bg-white shadow`
+    const buttonWidth: string = `w-[280px]`;
+    const navBarStyleWithOutScroll = `fixed z-10 w-full bg-purple-100 shadow-none`;
+    const navBarStyleOnScroll = `fixed z-10 w-full bg-white shadow shadow-lg shadow-indigo-500/50`; 
+    const navButtonText = 'Get started for free'
     interface navBarIconData {
         name: string,
         imgPath: string,
@@ -42,7 +43,7 @@ function NavBar() {
     const data: navBarData = {
         navBarLogo: {
             name: 'LucyLogo',
-            imgPath: '/assets/icons/LucyLogo.png',
+            imgPath: '/assets/icons/lucyLogo.png',
             href: "https://asklucy.co"
         },
         navBarItems: ['Login']
@@ -50,11 +51,11 @@ function NavBar() {
 
     return (
         <nav className={colorChange ? navBarStyleOnScroll : navBarStyleWithOutScroll}>
-            <div className="justify-between flex items-center px-4 mx-auto border md:items-center md:flex md:px-8 lg:max-w-7xl">
+            <div className="justify-between flex items-center px-4 mx-auto border-none md:items-center md:flex md:px-8  lg:w-[100%]">
                 <div>
-                    <div className="flex border items-center justify-between py-3 md:py-5 md:block">
+                    <div className="flex border items-center justify-between py-3 md:py-5 md:block border-none">
                         <a href={data.navBarLogo.href}>
-                            <Image width={ width! >= 769 ? 90: 80} height={width! >= 769 ? 43: 43} src={data.navBarLogo.imgPath}/>
+                            <Image alt="" width={ width! >= 769 ? 90: 80} height={width! >= 769 ? 43: 43} src={data.navBarLogo.imgPath}/>
                         </a>
                     </div>
                 </div>
@@ -97,13 +98,13 @@ function NavBar() {
                 </div>
                 {/* phone nav element */}
                 <div
-                    className={`flex-1 absolute left-[-0.2rem] top-[38%] pb-[3rem] w-[100%] justify-self-center pb-3 ${colorChange ? "bg-white": ""} mt-8 md:hidden md:pb-0 md:mt-0 ${navbar ? "block" : "hidden"
+                    className={`flex-1 absolute left-[-0.2rem] top-[38%] w-[100%] justify-self-center pb-3 ${colorChange ? "bg-white": ""} mt-8 md:hidden md:pb-0 md:mt-0 ${navbar ? "block" : "hidden"
                         }`}
                 >
                     <div className="flex flex-col justify-center items-center md:flex md:flex-row md:items-center">
                         <div className="flex items-center justify-center w-16 h-4 not-italic font-semibold text-xl leading-8" >{data.navBarItems[0]}</div>
-                        <a href="https://t.me/lucy_one_bot">
-                            <CallToActionButton width={buttonWidth} />
+                        <a target="_blank" href="https://t.me/lucy_one_bot">
+                            <CallToActionButton text={navButtonText} width={buttonWidth} />
                         </a>
                     </div>
                 </div>
@@ -113,9 +114,9 @@ function NavBar() {
                         }`}
                 >
                     <div className="flex flex-col w-[100%] items-center md:flex md:flex-row md:items-center">
-                        <div className="flex items-center justify-center w-16 h-4 not-italic font-semibold text-xl leading-8">{data.navBarItems[0]}</div>
-                        <a href="https://t.me/lucy_one_bot">
-                            <CallToActionButton width={buttonWidth} />
+                        <div className="flex items-center justify-center w-26 h-4 not-italic font-semibold text-xl leading-8">{data.navBarItems[0]}</div>
+                        <a target="_blank" href="https://t.me/lucy_one_bot">
+                            <CallToActionButton text={navButtonText} width={buttonWidth} />
                         </a>
                     </div>
                 </div>
