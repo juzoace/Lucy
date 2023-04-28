@@ -75,7 +75,7 @@ function Footer() {
                 <div className='flex mt-4 justify-center mb-4 md:relative md:top-[7rem]'>
 
                     {data.footerIcons.map((icon, i) => (
-                        <a href={icon.href} key={i} className='mr-5'>
+                        <a href={icon.href} key={i} className='mr-5 hover:scale-105'>
                             <Image alt="" width={ width! >= 769 ? 35: 25} height={width! >= 769 ? 35: 25} src={icon.imgPath} />
                         </a>
                     ))}

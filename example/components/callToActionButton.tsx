@@ -8,7 +8,7 @@ interface componentProps {
 
 const CallToActionButton:React.FC<componentProps> = ({width, text}) => {
 
-    const classNameValue = `hover:bg-indigo-800  m-3 ${width} bg-indigo-600 h-14 rounded-lg flex justify-center text-whiteText items-center not-italic font-semibold text-xl leading-8`;
+    const classNameValue = `hover:bg-indigo-800 hover:scale-105  m-3 ${width} bg-indigo-600 h-14 rounded-lg flex justify-center text-whiteText items-center not-italic font-semibold text-xl leading-8`;
 
     return (
         <div className={classNameValue}>
